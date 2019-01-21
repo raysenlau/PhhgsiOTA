@@ -2,11 +2,11 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
         <blueline>
-            <Filename>PixelExperience_arm64_ab-9.0-20190125-0600-UNOFFICIAL.img.zip</Filename>
+            <Filename>PixelExperience_arm64_ab-9.0-20190121-1220-UNOFFICIAL.img.zip</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
-                description="Download The Latest Build">https://pan.baidu.com/s/171I5FGeFE189U9UI7HrOiw</RomUrl>
+                description="Download The Latest Build">https://pan.baidu.com/s/1xX2012pysguj7UT3RwwOwA</RomUrl>
             <ChangelogUrl
                 id="changelogs"
                 title="Changelogs"
@@ -14,7 +14,7 @@
             <RomMirrorUrl
                 id="romirror"
                 title="XDA Thread"
-                description="Visit The XDA Thread">https://#</RomMirrorUrl>
+                description="Visit The XDA Thread">https://forum.xda-developers.com/nokia-7-plus/development/9-0-pixelexperience-p-unofficial-t3885225</RomMirrorUrl>
         </blueline>
     </Stable>
 </SlimOTA>
