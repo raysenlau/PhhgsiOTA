@@ -2,7 +2,7 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
         <blueline>
-            <Filename>PixelExperience_arm64_ab-9.0-20190121-1220-by-WoNiu</Filename>
+            <Filename>PixelExperience_arm64_ab-9.0-20190121-1220-UNOFFICIAL.img.zip</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
