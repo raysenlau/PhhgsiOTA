@@ -10,7 +10,7 @@
             <ChangelogUrl
                 id="changelogs"
                 title="Changelogs"
-                description="Check Out The Latest Changes">https://pan.baidu.com/s/171I5FGeFE189U9UI7HrOiw</ChangelogUrl>
+                description="Check Out The Latest Changes">https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/changelog/blueline.txt</ChangelogUrl>
             <RomMirrorUrl
                 id="romirror"
                 title="XDA Thread"
