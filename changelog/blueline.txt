@@ -1,97 +1,131 @@
 =======================
+     01-21-2019
+=======================
+
+   * frameworks/base/
+f2d6451dcfa Do not use theme context in notifications for remote views
+f92b773761b Reload assets on overlay change: code improvements
+1455895fbfe Reload more assets on overlay change
+79a665a8b07 Expose a bool to tint notification app name
+dd90b5f0ed5 Add bool to enable algorithm for dark backgrounds
+422876a029a Notification dynamic colors bool compatible with OMS7
+4b269f919fa Expose a bool to disable dynamic colors
+38039484447 Fix notification overlay config
+f1e32d6cdf3 Add support for theming notifications
+
+   * hardware/qcom/power/
+75e7a3a power: Kill "Failed to acquire lock" log
+
+   * packages/apps/Settings/
+ce57cbfb95 StorageSummaryPreference: Nuke hardcoded color
+
+   * vendor/aosp/
+bcaabc57 Set a default ringtone for the 2nd sim
+
+   * vendor/themes/
+aefce0c Thematize QS and notifications like Android Q
+267e6c4 Fix the legacy color icons
+0e15f81 Theme dark notifications
+550e154 Fix notification overlay config
+3efca22 Fix keyboard shortcut item color
+
+=======================
+     01-20-2019
+=======================
+
+
+   * build/make/
+433949dca Merge "build: Remove some debugging props" into pie
+
+   * packages/apps/DocumentsUI/
+01fa2e1e Theme improvements
+
+   * packages/apps/SettingsIntelligence/
+5830b6e Fix dark style issues
+
+   * vendor/pixelstyle/
+8d81caf Update SoundPickerPrebuilt
+
+   * vendor/themes/
+cf09d7e themes: Update system overlays from fwb
+
+=======================
      01-19-2019
 =======================
 
 
    * build/make/
-be94bc4f2 Set ro.build.fingerprint in system/etc/prop.default
-9a5b6a20d Revert "Remove root folder bt_firmware in GSI"
-
-   * device/phh/treble/
-0dde60b RW: Nokia device fixed
-
-   * external/selinux/
-fc3c700e Increase default log_level to get actual selinux error in kmsg
-6eadc873 Enable multipl_decls by default. This is needed because 8.0 init doesn't add -m
-
-   * frameworks/av/
-846686b37 We might not have a mFlashlight at this state, but that's ok
-5941edcad Kirin:: Remove lock to prevent self-lock
-3a21522c6 Fix WiFi-Display on Huawei devices (EMUI 8.0)
-96d6633fd FIH devices: Fix "Earpiece" audio output
+f7c898183 build: Remove some debugging props
+5fa25366c Don't build SysuiDarkThemeOverlay
 
    * frameworks/base/
-ae21cfdc89e LockscreenCharging: squashed (1/3)
-a257f0e7c35 Phone ringtone setting for Multi SIM device
-38f8dca4bf3 Add VOLTE icon (AEX)
-6e399330d3b Add japanese S9
-2f518de8dd2 Add a property to override pre-o max aspect ratio
-4444a7f3712 Add a property toggle to enable high brightness range on samsung device
-4cc56aa3d32 Switch samsung light fingerprint match to regexp, to include Note9
-cd84fd54504 Don't wake IR HAL to the infinity and beyond
-e8242cb03b4 It is okay not to have wifi in SystemUI (on FDE lock)
-afa20ebe472 power: Disable keyboard/button lights while dozing/dreaming
-aa2c8a02869 Reintroduce button-backlight (and respective inactivity timeout)
-092661b1f1d Move SysuiDarkThemeOverlay to /system
-69615153de3 idmap: Don't silently ignore RROs with same priority
-97450f5485a Change SignalStrentgh to change behaviour based on property
-05b5d643540 Show APN Settings for CDMA carriers
-8d197267687 "remaining" of HAL onEnroll is actually a percent of progress
-cc145173eb3 Add Qualcomm starlte
-83319222bf7 Fix typo on fnmatch return value check
-9fb5a074ad8 property-matching RROs: allow to prefix the value with + to do glob match instead of exact match
-7550d6c64ba Try to make brightness more generic using property set by rw-system
-6c4e5d7e5aa Fix OP6 brightness
-c159c96677b S9 brightness override only for screen
-4e53b8c3e75 Fix(?) #62
-66db34a862d Don't crash if there is IR HAL is not declared
-78d76077368 Also scan /system/overlay
-00c4ca2fa7a Relax requirement for visible flag to sdcards
-d98de2d76ab Fix backlight control on Galaxy S9(+)
+2d984492926 fwb: Workaround to fix dark theme on Messaging app
+9b63d4c5417 fwb: Lock day night mode
+62d6262fdc4 DefaultPermissionGrantPolicy: grant Google sounds picker storage perms
+af7b4b185c6 base: fix mediascanner access permissions to external storage
+9c2544375b7 Automatic translation import
+1780de1af40 Volume panel: Do the same with less
+adc7774fa9f framework: Implement advanced restart
+0a459764005 Expose two target preference divider color
+a391bb83d20 Expose toast colors for themes
+87b786cf670 Expose autofill save dialog text color
+54ae1793d9a Fix autofill save dialog
+13a6ac828b8 Allow Immersive cling colors to be fully themed
+3e308d993b5 Themes: Allow Resolver List BG to be fully themed
+1479db31687 Make resolver list fully themeable
+d44a64e5a72 Themes: Expose resolver hardcoded colors
+6e33b60b30b Unload old SystemUI dark overlay
+1f86966d9ea SystemUI: Change dark theme overlays
+1901fabad0c fwb: Add ability to force show battery percentage inside icon
 
-   * frameworks/native/
-99fd198f6 Enable fallback to old ro.sf.hwrotation property
-a5e8b98aa Huawei:: HWC doesn't understand 0,0,0,0 == fullscreen damage. Set it to the whole visible surface
-a661519c1 Ignore usage bits verification
-330fa82d5 AOSP 8.0/8.1 didn't use presentOrValidate, so it's broken. Don't use it
+   * hardware/qcom/display/
+329d459b Make memtrack build with the VNDK.
+08b18768 Add missing includes.
+a2eefae2 libmemtrack: Add open method for msm8974.memtrack
 
-   * frameworks/opt/net/wifi/
-ad95069b5 Support hostap on O/O-MR1 vendors
-67ac82ef0 Start supplicant later
-e563f5e00 Revert "SupplicantManager: Remove |ensure_config_file_exists|"
-
-   * frameworks/opt/telephony/
-433d179b3 Allow LocaleTracker to work even if wifi is not up (FDE)
-894e3ac7b Add route to gateway on null netmask
+   * packages/apps/DocumentsUI/
+34de7424 Use white navbar for DocumentsUI as well
+b9e27226 DocumentsUI: Thematize navbar on dark theme
+1b3c02ed DocumentsUI: support night mode
 
    * packages/apps/Settings/
-52c008a1a9 Phone ringtone setting for Multi SIM device
-6ec914fc53 Act as usb device when there is no hal, but we believe we are a device
+bf95c9ad47 Automatic translation import
+147bbfb55f Settings: Add advanced restart switch
+c550023943 Themes: Settings: Fix theming  zoom preview timestamp text color
+8152c0ef90 Now Playing History MD2 redesign
+2f2eb54eff Now playing history: Fix BG of entry dialog in Dark UI
+ed8d86934b Merge "Fix BT pairing dialog DarkUI theme issue" into pie
+ff96be346c Merge "Ensure AOSP theme selector doesn't rear its ugly head" into pie
+f989e9467b Merge "Give new life to reset buttons" into pie
+bf438159b5 Fix multi-sim dialog in RTL
+06a39698c4 Fix BT pairing dialog DarkUI theme issue
+962e306c7b Ensure AOSP theme selector doesn't rear its ugly head
+8ffffb1aee Give new life to reset buttons
 
-   * system/bt/
-6beb6d0b2 Make BTM_BYPASS_EXTRA_ACL_SETUP dynamic
+   * packages/apps/Updates/
+b88d57e Automatic translation import
 
-   * system/core/
-c181f8fa0 First drop_privs (which may fail) and only run thread that might be scheduled before us
-8afc36956 Some kernel crashes when using too recent sdcardfs options. Force everyone to old options
-c407c54d3 Revert "logd: add "+passcred" for logdw socket"
+   * packages/providers/AmbientPlayHistoryProvider/
+67ec3f8 Automatic translation import
 
-   * system/netd/
-90a1da8 Huawei Kirin 960:: accept broken rpfilter match
-
-   * system/sepolicy/
-3da4386c Relax /proc read from ueventd, huawei needs it
-6d7de344 Don't set esdfs or exfat genfscon. Assume OEM does
-
-   * system/vold/
-c6d8134 Also create vendor_ce (same reason as vendor_de)
-892a94f Support Samsung's implementation of exfat, called sdfat
-ed43f55 Create vendor_de. This is done by /init.rc on system-as-root device
-de47593 Don't set reserved_disk group, it panics old inits
-0363cb1 Allow deletion of symlink
+   * packages/providers/DownloadProvider/
+98ed5bf Automatic translation import
 
    * vendor/aosp/
-0700ad26 Set a default ringtone for the 2nd sim
+cfe66ccc vendor: Enable themes
+
+   * vendor/gapps/
+302c5f3 Use aosp PackageInstaller
+
+   * vendor/pixelstyle/
+3c8fc8b Conditionally ship old SoundPicker
+2b3cc06 Update MatchmakerPrebuilt
+
+   * vendor/themes/
+ba2179e Theme volume panel's footer BG
+93b9a7e themes: Bring systemui theme
+37e0a7d themes: Set navigation bar color on package installer
+089d77c themes: Refactor
 
 =======================
      01-18-2019
@@ -101,16 +135,33 @@ de47593 Don't set reserved_disk group, it panics old inits
    * development/
 8e09e639b make-key: Enforce PBEv1 password-protected signing keys
 
+   * device/phh/treble/
+9716bf8 Be compatible with AOSP master BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE
+
+   * frameworks/base/
+45f7ed66a9c SystemUI: Fix flickering issue when live wallpaper is showing on aod/pulsing
+
+=======================
+     01-17-2019
+=======================
+
+
    * device/custom/sepolicy/
 dd6d06c common: Improve label of I/O sched tuning nodes
 bb389cc sepolicy: Address perf HAL denial with boost enabled
 
    * device/phh/treble/
-9716bf8 Be compatible with AOSP master BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE
 70874eb Merge branch 'wh0dat-patch-1' of https://github.com/wh0dat/device_phh_treble into android-9.0
+1b45c55 Merge pull request #79 from timbortnik/mimax3-nitrogen-fixes
 
    * frameworks/base/
+f7f230a9ef1 WallpaperManagerService: Report dark theme when battery saver is enabled
 37e2708b402 WeatherClient: Don't enforce READ_WEATHER permission
+
+   * hardware/qcom/display-caf/msm8974/
+33f3c20a9 Make memtrack build with the VNDK.
+5acc37c93 Add missing includes.
+e3737eeb3 libmemtrack: Add open method for msm8974.memtrack
 
    * hardware/qcom/power/
 c2900e9 power: Build with with BOARD_VNDK_VERSION
@@ -119,18 +170,10 @@ c267a0e power: msm8937: Update power profile settings
 7ed6e86 power: Add specific powerhal for msm8937
 
    * prebuilts/clang/host/linux-x86/
-0b7a82e Fix a dir name typo (clang-346389c -> clang-r346389c).
+0b7a82e1 Fix a dir name typo (clang-346389c -> clang-r346389c).
 
-=======================
-     01-17-2019
-=======================
-
-
-   * device/phh/treble/
-1b45c55 Merge pull request #79 from timbortnik/mimax3-nitrogen-fixes
-
-   * vendor/gapps/
-2426f2f Update apps
+   * vendor/aosp/
+3e48450c vendor: Remove deprecated selinux prop
 
 =======================
      01-16-2019
@@ -139,25 +182,24 @@ c267a0e power: msm8937: Update power profile settings
 
    * device/phh/treble/
 2acc50d xiaomi-mimax3-fix
-31cfcc6 Merge pull request #78 from SKULSHADY/patch-1
-c3d94dd Added support for Motorola / Hannah
 
 =======================
      01-15-2019
 =======================
 
 
-   * frameworks/base/
-7ef5e0f1381 framework: Battery led default value should follow notification led
-23d135738da fonts: Build different fonts.xml if EXCLUDE_SERIF_FONTS is true
+   * device/phh/treble/
+31cfcc6 Merge pull request #78 from SKULSHADY/patch-1
+c3d94dd Added support for Motorola / Hannah
 
 =======================
      01-14-2019
 =======================
 
 
-   * device/phh/treble/
-700fd17 Fix common.mk path
+   * frameworks/base/
+7ef5e0f1381 framework: Battery led default value should follow notification led
+23d135738da fonts: Build different fonts.xml if EXCLUDE_SERIF_FONTS is true
 
 =======================
      01-13-2019
@@ -167,6 +209,9 @@ c3d94dd Added support for Motorola / Hannah
    * development/
 0d9797de8 Remove useless build warning
 
+   * device/phh/treble/
+700fd17 Fix common.mk path
+
    * packages/apps/Nfc/
 91847cf2 Automatic translation import
 
@@ -175,19 +220,19 @@ c3d94dd Added support for Motorola / Hannah
 =======================
 
 
-   * hardware/qcom/audio-caf/msm8998/
-2226fb947 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/audio into lineage-16.0-caf-8998
-
-   * hardware/qcom/display-caf/msm8998/
-e2c0a6db6 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/display into lineage-16.0-caf-8998
-
-   * hardware/qcom/media-caf/msm8998/
-e077da5e4 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/media into lineage-16.0-caf-8998
-
 =======================
      01-11-2019
 =======================
 
+
+   * hardware/qcom/audio-caf/msm8998/
+2226fb947 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/audio into lineage-16.0-caf-8998
+
+   * hardware/qcom/display-caf/msm8998/
+e2c0a6db Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/display into lineage-16.0-caf-8998
+
+   * hardware/qcom/media-caf/msm8998/
+e077da5e4 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/media into lineage-16.0-caf-8998
 
 =======================
      01-10-2019
@@ -197,81 +242,36 @@ e077da5e4 Merge tag 'LA.UM.7.4.r1-04100-8x98.0' of https://source.codeaurora.org
    * frameworks/native/
 eb136cdf4 Fix screenshot when cutout is hidden
 
+   * hardware/qcom/audio-caf/msm8996/
+53ac67649 Merge tag 'LA.UM.7.6.r1-03900-89xx.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/audio into HEAD
+
+   * hardware/qcom/display-caf/msm8996/
+6d5c572cc Merge tag 'LA.UM.7.6.r1-03900-89xx.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/display into HEAD
+
+   * hardware/qcom/media-caf/msm8996/
+29fa78708 Merge tag 'LA.UM.7.6.r1-03900-89xx.0' of https://source.codeaurora.org/quic/la/platform/hardware/qcom/media into HEAD
+
 =======================
      01-09-2019
 =======================
 
-
-   * bionic/
-cf89392ca Merge branch 'pie-gsi' of https://android.googlesource.com/platform/bionic into HEAD
-
-   * bootable/recovery/
-80a909c5 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/bootable/recovery into HEAD
-
-   * build/make/
-36caceffe Merge branch 'pie-gsi' of https://android.googlesource.com/platform/build into pie
-89506fd53 Merge tag 'android-9.0.0_r30' into pie
-
-   * build/soong/
-cb9eb38f Merge branch 'pie-gsi' of https://android.googlesource.com/platform/build/soong into HEAD
 
    * device/custom/sepolicy/
 3c081b7 common: Allow init to relabel I/O sched tuning nodes
 
    * device/phh/treble/
 26a5b8f Fix syntax
-4456ea4 Merge pull request #76 from penn5/patch-1
-
-   * external/perfetto/
-6f223188 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/external/perfetto into HEAD
-
-   * frameworks/av/
-4884f7ad7 Merge tag 'android-9.0.0_r30' of https://android.googlesource.com/platform/frameworks/av into HEAD
-15a4c5c34 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/av into HEAD
 
    * frameworks/base/
 6d2973c2cb5 Merge "Automatic translation import" into pie
 e77f9c33ace Automatic translation import
 16b24c35335 Merge "SystemUI: Make dark theme switch more sane [1/2]" into pie
 3c95d9de641 SystemUI: Make dark theme switch more sane [1/2]
-0e2e41de92f WeatherClient: Add back isAvailable method
-ba3ab3492d2 SurfaceControl: Unbreak public API after pie-gsi merge
-7e3e93e73a1 Merge tag 'android-9.0.0_r30' of https://android.googlesource.com/platform/frameworks/base into HEAD
-73f1a73fe06 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/base into HEAD
-e119497b105 ConsumerIR: Support Huawei's DSP chip implementation
-2fe11fda11a WindowOrientationListener: Check if proposed rotation is in range
-4ef89241c1c Revert "PhoneWindowManager: Check if proposed rotation is in range"
-9e800a16ad3 Enable Binder Proxy Tracking by Uid only on eng builds
-a4c50edca65 PowerProfile: allow overriding default power profile
-53ee07b3486 Revert "PowerProfile: allow overriding default power profile"
-c58f7336843 Add support for the .opus file format
-
-   * frameworks/native/
-86fb5c2d3 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/native into HEAD
-
-   * frameworks/opt/net/wifi/
-d3da932ef Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/opt/net/wifi into HEAD
-
-   * frameworks/opt/telephony/
-10a4db770 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/opt/telephony into HEAD
-
-   * hardware/interfaces/
-e4b2a904 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/hardware/interfaces into HEAD
-
-   * hardware/qcom/audio/default/
-dd4e0ad9b Merge tag 'android-9.0.0_r30' into lineage-16.0-android-9.0.0_r30
-
-   * packages/apps/Bluetooth/
-1b48e082 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Bluetooth into HEAD
-
-   * packages/apps/Camera2/
-c6d3e4155 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Camera2 into HEAD
 
    * packages/apps/Settings/
 ed33892345 Merge "Automatic translation import" into pie
 9e9bf9a4e5 Automatic translation import
 80e761eb8d Settings: Make dark theme switch more sane [2/2]
-ea0bf1f448 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Settings into HEAD
 
    * packages/apps/Updates/
 88d6d1b Automatic translation import
@@ -281,64 +281,9 @@ c2d522d Automatic translation import
 
    * packages/providers/DownloadProvider/
 c64b909 Automatic translation import
-0ff240d Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/providers/DownloadProvider into HEAD
-
-   * packages/providers/MediaProvider/
-837b37d Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/providers/MediaProvider into HEAD
-
-   * packages/services/Telecomm/
-d59fd280 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/services/Telecomm into HEAD
-
-   * packages/services/Telephony/
-c1cef9de4 Fix non-protected broadcasts sent from phone process.
-dd3148d2b Telephony: Support muting by RIL command
-6266a92a5 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/services/Telephony into HEAD
-
-   * system/bt/
-8f9050344 Merge tag 'android-9.0.0_r30' into lineage-16.0-android-9.0.0_r30
-
-   * system/core/
-3a970c873 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/core into HEAD
-
-   * system/netd/
-199e2ad Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/netd into HEAD
-
-   * system/sepolicy/
-7b87b579 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/sepolicy into HEAD
-
-   * system/vold/
-e641fc2 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/vold into pie
-d4d04df Merge tag 'android-9.0.0_r21' into pie
-cb6d90a vold: Move QCOM HW FDE inclusion under custom namespace
-1357182 system: vold: Remove crypto block device creation
-22eb0d1 vold: Add Hardware FDE feature
-23ea7c0 vold: Wrapped key support for FBE
 
    * vendor/aosp/
 de3b5948 Revert "vendor: open sdcard root when launching DocumentsUI"
-b60621bb soong_config: Add flag for msm8974 1440p EGL workaround
-f898025d soong_config: Add flag for crypto waiting on QSEE to start
-353c3cd4 soong_config: Add flag for legacy HW FDE
-4cf07a50 soong_config: Add new flags for HW FDE
-2c8ebb12 vendor: qcom: Set proper CAF data-ipa-cfg-mgr pathmap
-4db96a1a vendor: qcom: Set data-ipa-cfg-mgr pathmap
-f4bd6616 vendor: open sdcard root when launching DocumentsUI
-bee9d765 extract_utils: avoid doing stuff on files that don't exist
-8cbeb402 vendor: Dynamically add custom APNs
-f95651ce vendor: Support system-as-root A-only backuptool
-ce179b9f vendor: restorecon scheduler tuneables before touching them
-41ba00b0 Revert "vendor: Cleanup init files"
-8eadcfd7 vendor: qcom: Allow a device to manually override which HALs it wants to use
-980991c9 permissions: Add permission for org.lineageos.snap
-f11512f6 overlay: Define Google Assistant as default
-c5efd8f8 vendor: Add techpack/audio to include path also
-3af1a2b5 vendor: Consider techpack/audio when generating kernel headers
-0b31ecf1 extract_utils: Redirect vdexextractor log to /dev/null
-6dd5865b vendor: Update vendorsetup logic
-f056ff8a vendor: Cleanup init files
-a7a0dc0e vendor: Copy org.pixelexperience.ota only on official builds
-945ed706 permissions: Add permissions for org.pixelexperience.ota
-c2faaed9 vendor: SystemUI: Import carrier overlays from crosshatch
 
    * vendor/hardware_overlay/
 710601c Update Treble app to 1808b79a206251c2947e988501d63deb011cfc08
@@ -350,25 +295,26 @@ cd278fa Updatre Treble app to 70740a754ed89e11e126618ff8f1df28fc3330b5
 77cf328 Update TrebleApp apk as of 3d403df589310b5a74d88d7fec856948b43a115c
 0495929 Remove in-tree messy apps, and switch to TrebleApp
 
-   * vendor/pixelstyle/
-39325f8 Update WeatherClient
-
-   * vendor/qcom/opensource/cryptfs_hw/
-87db962 Change soong variable name
-
 =======================
      01-08-2019
 =======================
 
 
+   * bionic/
+cf89392ca Merge branch 'pie-gsi' of https://android.googlesource.com/platform/bionic into HEAD
+
    * bootable/recovery/
+80a909c5 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/bootable/recovery into HEAD
 08f8c667 update_verifier: skip verity to determine successful on custom builds
 
    * build/make/
+36caceffe Merge branch 'pie-gsi' of https://android.googlesource.com/platform/build into pie
+89506fd53 Merge tag 'android-9.0.0_r30' into pie
 a51396654 Enable dynamic linker and hidden API warnings only on eng build
 bee69ae63 build: Support system-as-root A-only backuptool
-bb83e5ca6 Merge "Revise apns-conf.xml of Legacy GSI from goldfish to sample" into pie-gsi
-e6043e250 Revise apns-conf.xml of Legacy GSI from goldfish to sample
+
+   * build/soong/
+cb9eb38f Merge branch 'pie-gsi' of https://android.googlesource.com/platform/build/soong into HEAD
 
    * device/custom/sepolicy/
 ab04909 Make A/B backuptool permissive
@@ -377,6 +323,7 @@ c2eb9e8 move snap_app type definition to public
 c0b7447 common: Label and allow init to write to I/O sched tuning nodes
 
    * device/phh/treble/
+4456ea4 Merge pull request #76 from penn5/patch-1
 77071ff Bigger arm_a system.img
 
    * device/qcom/sepolicy/
@@ -385,10 +332,26 @@ c0b7447 common: Label and allow init to write to I/O sched tuning nodes
    * device/qcom/sepolicy-legacy/
 caa7faa Merge https://github.com/LineageOS/android_device_qcom_sepolicy-legacy into pie
 
+   * external/perfetto/
+6f223188 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/external/perfetto into HEAD
+
    * frameworks/av/
+4884f7ad7 Merge tag 'android-9.0.0_r30' of https://android.googlesource.com/platform/frameworks/av into HEAD
+15a4c5c34 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/av into HEAD
 931f91130 mediascanner: Accept .opus file extension.
 
    * frameworks/base/
+0e2e41de92f WeatherClient: Add back isAvailable method
+ba3ab3492d2 SurfaceControl: Unbreak public API after pie-gsi merge
+7e3e93e73a1 Merge tag 'android-9.0.0_r30' of https://android.googlesource.com/platform/frameworks/base into HEAD
+73f1a73fe06 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/base into HEAD
+e119497b105 ConsumerIR: Support Huawei's DSP chip implementation
+2fe11fda11a WindowOrientationListener: Check if proposed rotation is in range
+4ef89241c1c Revert "PhoneWindowManager: Check if proposed rotation is in range"
+9e800a16ad3 Enable Binder Proxy Tracking by Uid only on eng builds
+a4c50edca65 PowerProfile: allow overriding default power profile
+53ee07b3486 Revert "PowerProfile: allow overriding default power profile"
+c58f7336843 Add support for the .opus file format
 15759937383 CameraServiceProxy: Loosen UID check conditionally
 26435173f54 Fix NPE when creates wifi tracker
 af1c6604354 Revert "Wifi: Check for WiFiService's existence before its access"
@@ -416,21 +379,30 @@ f1b93c6c440 display: Add support for multiple displays.
 c742950ec0d Merge changes for launching wifidisplay from system settings
 6a85e3e85b3 WifiDisplayController: handle preexisting p2p connection status
 591ec734b9e core: Add support for overriding vendor properties
-d8b004855a2 Merge "Null locale causing the VTS fail." into pie-gsi
-07b9d14373c Null locale causing the VTS fail.
 
    * frameworks/native/
+86fb5c2d3 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/native into HEAD
 a079725c3 sf: Workaround BufferLayer::setBuffers issue on 1440p msm8974
 1c84d150e libbinder: -case in 'Waiting for service' log.
 6d095f293 libbinder: Don't link against libutilscallstack.
+
+   * frameworks/opt/net/wifi/
+d3da932ef Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/opt/net/wifi into HEAD
+
+   * frameworks/opt/telephony/
+10a4db770 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/frameworks/opt/telephony into HEAD
 
    * hardware/custom/interfaces/
 35f690f light: aw2013: Mark as shutdown critical
 
    * hardware/interfaces/
+e4b2a904 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/hardware/interfaces into HEAD
 7405baf9 camera: Only link and use vendor.qti.hardware.camera.device if specified
 9d0a0d14 Camed HAL extension: Added support in HIDL for Extended FD.
 ad8bf5cb Tuning of binder buffer for ARM devices
+
+   * hardware/qcom/audio/default/
+dd4e0ad9 Merge tag 'android-9.0.0_r30' into lineage-16.0-android-9.0.0_r30
 
    * hardware/qcom/fm/
 d99e316 Import translations from los
@@ -438,7 +410,14 @@ d99e316 Import translations from los
    * hardware/qcom/power/
 124ca2a power: msm8960: Implement performance profiles
 
+   * packages/apps/Bluetooth/
+1b48e082 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Bluetooth into HEAD
+
+   * packages/apps/Camera2/
+c6d3e4155 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Camera2 into HEAD
+
    * packages/apps/Settings/
+ea0bf1f448 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/apps/Settings into HEAD
 9dc3c49043 Settings: Check if we have any color modes declared in overlay
 130cd1c2e8 development: Hide AOSP setting to control UI mode
 34022df1ca Automatic translation import
@@ -449,8 +428,65 @@ e65787b7ed Ambient Play: Add summary to some settings
 6b0fc2687e Automatic translation import
 d2859264f2 deviceinfo: Add support for overriding vendor properties
 
+   * packages/providers/DownloadProvider/
+0ff240d Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/providers/DownloadProvider into HEAD
+
+   * packages/providers/MediaProvider/
+837b37d Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/providers/MediaProvider into HEAD
+
+   * packages/services/Telecomm/
+d59fd280 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/services/Telecomm into HEAD
+
    * packages/services/Telephony/
+c1cef9de4 Fix non-protected broadcasts sent from phone process.
+dd3148d2b Telephony: Support muting by RIL command
+6266a92a5 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/packages/services/Telephony into HEAD
 9e830592c Don't start SIP service before decrypted
+
+   * system/bt/
+8f9050344 Merge tag 'android-9.0.0_r30' into lineage-16.0-android-9.0.0_r30
+
+   * system/core/
+3a970c873 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/core into HEAD
+
+   * system/netd/
+199e2ad Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/netd into HEAD
+
+   * system/sepolicy/
+7b87b579 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/sepolicy into HEAD
+
+   * system/vold/
+e641fc2 Merge branch 'pie-gsi' of https://android.googlesource.com/platform/system/vold into pie
+d4d04df Merge tag 'android-9.0.0_r21' into pie
+cb6d90a vold: Move QCOM HW FDE inclusion under custom namespace
+1357182 system: vold: Remove crypto block device creation
+22eb0d1 vold: Add Hardware FDE feature
+23ea7c0 vold: Wrapped key support for FBE
+
+   * vendor/aosp/
+b60621bb soong_config: Add flag for msm8974 1440p EGL workaround
+f898025d soong_config: Add flag for crypto waiting on QSEE to start
+353c3cd4 soong_config: Add flag for legacy HW FDE
+4cf07a50 soong_config: Add new flags for HW FDE
+2c8ebb12 vendor: qcom: Set proper CAF data-ipa-cfg-mgr pathmap
+4db96a1a vendor: qcom: Set data-ipa-cfg-mgr pathmap
+f4bd6616 vendor: open sdcard root when launching DocumentsUI
+bee9d765 extract_utils: avoid doing stuff on files that don't exist
+8cbeb402 vendor: Dynamically add custom APNs
+f95651ce vendor: Support system-as-root A-only backuptool
+ce179b9f vendor: restorecon scheduler tuneables before touching them
+41ba00b0 Revert "vendor: Cleanup init files"
+8eadcfd7 vendor: qcom: Allow a device to manually override which HALs it wants to use
+980991c9 permissions: Add permission for org.lineageos.snap
+f11512f6 overlay: Define Google Assistant as default
+c5efd8f8 vendor: Add techpack/audio to include path also
+3af1a2b5 vendor: Consider techpack/audio when generating kernel headers
+0b31ecf1 extract_utils: Redirect vdexextractor log to /dev/null
+6dd5865b vendor: Update vendorsetup logic
+f056ff8a vendor: Cleanup init files
+a7a0dc0e vendor: Copy org.pixelexperience.ota only on official builds
+945ed706 permissions: Add permissions for org.pixelexperience.ota
+c2faaed9 vendor: SystemUI: Import carrier overlays from crosshatch
 
    * vendor/foss/
 f27765a Disable vector because it doesnt dex2oat verify
@@ -460,24 +496,8 @@ f27765a Disable vector because it doesnt dex2oat verify
 8dd14c1 Merge pull request #55 from bengris32/master
 4b40052 Add support for ATU
 
-=======================
-     01-07-2019
-=======================
+   * vendor/pixelstyle/
+39325f8 Update WeatherClient
 
-
-   * device/qcom/sepolicy-legacy/
-d1f4846 sepolicy: Add additional restricted permissions to vendor_init
-
-=======================
-     01-06-2019
-=======================
-
-   * art/
-ac96e5bf49 Merge remote-tracking branch 'aosp/pie-gsi' into HEAD
-
-   * external/icu/
-e2f526142 Add python3 support for tools
-
-   * system/timezone/
-c4e651a Add python3 support for tools
-
+   * vendor/qcom/opensource/cryptfs_hw/
+87db962 Change soong variable name
