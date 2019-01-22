@@ -15,6 +15,10 @@
                 id="romirror"
                 title="XDA Thread"
                 description="Visit The XDA Thread">https://forum.xda-developers.com/nokia-7-plus/development/9-0-pixelexperience-p-unofficial-t3885225</RomMirrorUrl>
+            <MD5
+                id="romd5"
+                title="md5sum"
+                description="xxxxxxx"></MD5>
         </blueline>
     </Stable>
 </SlimOTA>
