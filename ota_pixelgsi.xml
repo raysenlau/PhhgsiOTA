@@ -2,7 +2,7 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
 		<phhgsi_arm64_ab>
-            <Filename>PixelExperience_arm64_ab-9.0-20190121-1220-UNOFFICIAL.img.zip</Filename>
+            <Filename>20190122-0306</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
@@ -18,7 +18,7 @@
         </phhgsi_arm64_ab>
 		
         <blueline>
-            <Filename>PixelExperience_arm64_ab-9.0-20190121-1220-UNOFFICIAL.img.zip</Filename>
+            <Filename>PixelExperience-9.0-20190122-0306-Happy-2019-Spring-Festival</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
