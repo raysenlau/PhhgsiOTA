@@ -16,5 +16,5 @@ a6475173efaeffce16a9fe877bd716bf
 
 升级更新方法：
 $ adb reboot bootloader
-$ fastboot flash patch/to/system.img
+$ fastboot flash system path/to/system.img
 $ fastboot reboot
