@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
-		<phhgsi_arm64_ab>
-            <Filename>20190122-0306</Filename>
+		    <phhgsi_arm64_ab>
+            <Filename>20190124-0519-喜迎新春</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
@@ -16,9 +16,9 @@
                 title="XDA Thread"
                 description="Visit The XDA Thread">https://forum.xda-developers.com/nokia-7-plus/development/9-0-pixelexperience-p-unofficial-t3885225</RomMirrorUrl>
         </phhgsi_arm64_ab>
-		
+
         <blueline>
-            <Filename>PixelExperience-9.0-20190122-0306-Happy-2019-Spring-Festival</Filename>
+            <Filename>PixelExperience-9.0-20190124-0519-喜迎新春</Filename>
             <RomUrl
                 id="rom"
                 title="Rom"
