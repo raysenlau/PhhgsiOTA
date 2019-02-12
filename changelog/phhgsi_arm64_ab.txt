@@ -1,18 +1,15 @@
 =======================
-     01-24-2019
+     02-12-2019
 =======================
-1.取消内置GCam
-2.修复Voice Match
-3.修复Playground
-4.优化暗黑模式
-5.优化OTA功能
-6.最新源码编译
+Update: February
+
+BuildID: PQ2A.190205.001
 
 Filename:
-PixelExperience_arm64_ab-9.0-20190124-0519-UNOFFICIAL.img.zip
+PixelExperience_arm64_ab-9.0-20190212-0628-UNOFFICIAL.img.zip
 
 md5sum:
-a6475173efaeffce16a9fe877bd716bf
+dba0a7cf56c99103618bc3ebe0effcf3
 
 How-to Upgrade：
 $ adb reboot bootloader
