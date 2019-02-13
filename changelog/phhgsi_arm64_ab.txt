@@ -1,15 +1,17 @@
 =======================
      02-12-2019
 =======================
-Update: February
+Update: 
+February Security Update
 
-BuildID: PQ2A.190205.001
+BuildID: 
+PQ2A.190205.001
 
 Filename:
-PixelExperience_arm64_ab-9.0-20190212-0628-UNOFFICIAL.img.zip
+PixelExperience_arm64_ab-9.0-20190212-1452-UNOFFICIAL.img.zip
 
 md5sum:
-dba0a7cf56c99103618bc3ebe0effcf3
+f328ac34e5bf969eb9459a1702c10bb8
 
 How-to Upgrade：
 $ adb reboot bootloader
