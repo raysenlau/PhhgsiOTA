@@ -2,7 +2,7 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
   <Stable>
     <phhgsi_arm64_ab>
-      <Filename>20190212-0628-喜迎新春,阖家辛福!</Filename>
+      <Filename>20190212-1452-February-Security-Update</Filename>
       <RomUrl
         id="rom"
         title="Rom"
