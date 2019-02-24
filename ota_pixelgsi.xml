@@ -18,7 +18,7 @@
       <PaypalUrl
         id="donation"
         title="Donation"
-        description="Donate To The Developer">https://#</PaypalUrl>
+        description="Donate To The Developer">https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/alipay_ray_lau.jpg</PaypalUrl>
     </phhgsi_arm64_ab>
   </Stable>
 </SlimOTA>
