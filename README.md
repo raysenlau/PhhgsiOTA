@@ -1,10 +1,9 @@
 # [捐助]Donate To The Developer
-```bash
-![Ray_lau](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/donation.png "Ray_lau")
-```
 
+![Ray_lau](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/donation.png "Ray_lau")
+
+## XDA:DevBD Information
 ```bash
-# XDA:DevBD Information
 Pixel Experiance, ROM for the Treble_GSI (arm64_ab)
 Build author: Ray_lau
 XDA Thread: https://forum.xda-developers.com/nokia-7-plus/development/9-0-pixelexperience-p-unofficial-t3885225
@@ -14,7 +13,7 @@ ROM Firmware Required: Unlocked bootloader
 Based On: Aosp
 Version Information
 Status: Stable
-
-# Supports
-QQ Support Group：949331477
 ```
+## Supports
+QQ Support Group：949331477
+
