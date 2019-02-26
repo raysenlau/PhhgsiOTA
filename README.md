@@ -1,4 +1,4 @@
-# [捐助]Donate To The Developer
+# [捐助] Donate me
 
 ![Ray_lau](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/donation.png "Ray_lau")
 
