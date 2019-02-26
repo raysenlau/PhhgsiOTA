@@ -1,6 +1,7 @@
-# Donate To The Developer
+# [捐助]Donate To The Developer
+```bash
 ![Ray_lau](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/donation.png "Ray_lau")
-
+```
 
 ```bash
 # XDA:DevBD Information
