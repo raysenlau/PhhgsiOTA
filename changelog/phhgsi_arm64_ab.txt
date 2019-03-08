@@ -4,22 +4,26 @@
 
 Updates: 
 1. March Android Security Patch.
-2. Remove N7p Roundapp, Install it with Magisk.
-3. Added/Fixed more devices overlay.
+2. Optimized N7P Rounded Corners.
+3. Optimized Higher_Aspect_Ratio_Screen.
+4. Added more Optimized Devices:
+    B2N,C1N,DRG,MATA,Z5,Z5s
+
 
 BuildID: 
 PQ2A.190305.002
 
 Filename:
-PixelExperience_arm64_ab-9.0-20190308-0421-UNOFFICIAL.img.zip
+PixelExperience_arm64_ab-9.0-20190308-1239-UNOFFICIAL.img.zip
 
 md5sum:
-0727db193f749b60e315e4578175efc8
+ab6823cc673108e6e62f28b85b3c2a60
 
 How-to Upgrade：
 $ adb reboot bootloader
 $ fastboot flash system path/to/system.img
 $ fastboot reboot
+
 
 
 =======================
