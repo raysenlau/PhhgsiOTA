@@ -1,19 +1,465 @@
 =======================
-     03-07-2019
+     ChangeLog
 =======================
-Update: 
-March Security Patch
+
+Updates: 
+1. March Android Security Patch.
+2. Remove N7p Roundapp, Install it with Magisk.
+3. Added/Fixed more devices overlay.
 
 BuildID: 
 PQ2A.190305.002
 
 Filename:
-PixelExperience_arm64_ab-9.0-20190307-1258-UNOFFICIAL.img.zip
+PixelExperience_arm64_ab-9.0-20190308-0421-UNOFFICIAL.img.zip
 
 md5sum:
-d2cfb656fa6f44d8cf0de5507d141bc3
+0727db193f749b60e315e4578175efc8
 
 How-to Upgrade：
 $ adb reboot bootloader
 $ fastboot flash system path/to/system.img
 $ fastboot reboot
+
+
+=======================
+     03-08-2019
+=======================
+
+
+   * bootable/recovery/
+c0373afa recovery: Allow custom bootloader msg offset in block misc
+
+   * build/make/
+72b7920e1 Set ro.build.fingerprint in system/etc/prop.default
+bf386167e Revert "Remove root folder bt_firmware in GSI"
+942838864 Use flags from Soong for d8, r8, dx and desugar
+749c88678 Remove TARGET_USES_MKE2FS
+0ec457c61 Remove extra $ in soong_app_prebuilt
+
+   * build/soong/
+71126e53 Fix formatting
+a7f7fbf8 Optimize CPU time when running d8, r8, dx and desugar
+
+   * device/phh/treble/
+9f5283a v111: Fix BT in-call audio
+5d34610 Call service only if we got it
+
+   * device/qcom/sepolicy/
+85c5d8d Merge https://github.com/LineageOS/android_device_qcom_sepolicy into HEAD
+
+   * device/qcom/sepolicy-legacy/
+283e344 Merge https://github.com/LineageOS/android_device_qcom_sepolicy-legacy into HEAD
+
+   * external/selinux/
+987e6a34 Increase default log_level to get actual selinux error in kmsg
+2c2e582d Enable multipl_decls by default. This is needed because 8.0 init doesn't add -m
+
+   * frameworks/av/
+da48bc786 We might not have a mFlashlight at this state, but that's ok
+e7fe718e3 Kirin:: Remove lock to prevent self-lock
+9f3104051 Fix WiFi-Display on Huawei devices (EMUI 8.0)
+adb197e90 FIH devices: Fix "Earpiece" audio output
+0234ccebc stagefright: add changes related to high-framerates in CameraSource
+806a14782 Revert "Stagefright: Allow setting high-framerates in CameraSource"
+dca428945 Revert "Stagefright: Do not skip frames in time-lapse-source for high-speed"
+
+   * frameworks/base/
+5c018d16fb4 Fix HD volte icon paddingStart
+2606310f767 Use HD VoLTE Icon
+bec19450dc5 Fix VOLTE icon color on Light statusbar
+303cbc359d7 LockscreenCharging: squashed (1/3)
+c51970ba29a Phone ringtone setting for Multi SIM device
+70567a92542 Add VOLTE icon (AEX)
+483e2f5c735 Add japanese S9
+f21833c0f27 Add a property toggle to enable high brightness range on samsung device
+9feac39cb2e Switch samsung light fingerprint match to regexp, to include Note9
+bc4ac29af55 Don't wake IR HAL to the infinity and beyond
+db989036fb9 power: Disable keyboard/button lights while dozing/dreaming
+2d64c8fa680 Reintroduce button-backlight (and respective inactivity timeout)
+4c6608e4956 Move SysuiDarkThemeOverlay to /system
+1afbb1de273 idmap: Don't silently ignore RROs with same priority
+f5ed2fcf611 Change SignalStrentgh to change behaviour based on property
+f720c6968a5 Show APN Settings for CDMA carriers
+b6698e1da03 "remaining" of HAL onEnroll is actually a percent of progress
+3b1f4361c2a Add Qualcomm starlte
+69b61baef67 Fix typo on fnmatch return value check
+b95888bb864 property-matching RROs: allow to prefix the value with + to do glob match instead of exact match
+251c6a41566 Try to make brightness more generic using property set by rw-system
+a0da918ca00 Fix OP6 brightness
+d38fa644eb8 S9 brightness override only for screen
+d382ad588bc Fix(?) #62
+5659f20c95c Don't crash if there is IR HAL is not declared
+0fd93341442 Also scan /system/overlay
+7f8bf7d7b9b Relax requirement for visible flag to sdcards
+2986c282493 Fix backlight control on Galaxy S9(+)
+a35e4ed38a6 BatteryMeterView: Fix logcat spam
+bad5b43cd76 SystemUI: Make recents grid view accept more than 8 tasks
+1b5da428e96 Show mobile icons with left-to-right in order of slot index
+decab56813a Revert "SystemUI: Sort subscriptions in reversed order"
+a132ce42d5f keylayout: add missing buttons to Razer Serval
+702d96996c6 Camera: Simplify code for Aux/Mono white and black lists
+09388d3a750 Camera: Force HAL1 for predefined package list.
+4b237c34387 camera: Check if aux camera whitelist is set before restricting cameras
+1ca6c217136 Camera: Expose Aux camera to apps present in the whitelist
+5117ce09fa8 hw/camera: Revert old commits
+3a91d0bf1e6 statusbar: Set view to gone when hidden
+e51e1a03dc8 Code improvements for "SystemUI: Refresh themes on dirty flash"
+12d494f0e07 AmbientIndicationManager: Fix NPE
+
+   * frameworks/native/
+1d7ce7b66 Enable fallback to old ro.sf.hwrotation property
+e54fced57 Huawei:: HWC doesn't understand 0,0,0,0 == fullscreen damage. Set it to the whole visible surface
+ecbca2be7 Ignore usage bits verification
+813a22fae AOSP 8.0/8.1 didn't use presentOrValidate, so it's broken. Don't use it
+b831557ad input: Adjust priority
+
+   * frameworks/opt/net/wifi/
+abd92d8ec Support hostap on O/O-MR1 vendors
+16ad09356 Start supplicant later
+4435fea28 Revert "SupplicantManager: Remove |ensure_config_file_exists|"
+
+   * frameworks/opt/telephony/
+0b5e2f770 Allow LocaleTracker to work even if wifi is not up (FDE)
+163f9a052 Add route to gateway on null netmask
+
+   * manifest/
+1ee00c8 Fork external/proguard
+cb6b606 manifest: Re-enable SDM845 CAF HALs
+4d45174 manifest: Move vendor/pixelstyle to GitLab
+
+   * packages/apps/Settings/
+4b4fca0e9e Settings: Add PixelgsiOTA and zh-rTW trans
+2111c76f59 Settings: Add aboutus to device info
+aa8e81a0db Phone ringtone setting for Multi SIM device
+c4a7584be1 Act as usb device when there is no hal, but we believe we are a device
+44b7b6ee33 Update the timestamp used for time zone filtering
+2d25bd34f2 Settings: fix eject sdcard icon color
+
+   * packages/services/Telecomm/
+f030633c Phone ringtone setting for Multi SIM device
+
+   * prebuilts/clang/host/linux-x86/
+2fc48fa Update prebuilt Clang to r353983.
+
+   * system/bt/
+5035e783e Make BTM_BYPASS_EXTRA_ACL_SETUP dynamic
+
+   * system/core/
+46681988b First drop_privs (which may fail) and only run thread that might be scheduled before us
+dd8e3aa35 Some kernel crashes when using too recent sdcardfs options. Force everyone to old options
+8b7d45ef9 Revert "logd: add "+passcred" for logdw socket"
+
+   * system/netd/
+a104900 Huawei Kirin 960:: accept broken rpfilter match
+
+   * system/sepolicy/
+5a3a22bf Relax /proc read from ueventd, huawei needs it
+149b9b28 Don't set esdfs or exfat genfscon. Assume OEM does
+e449377c sepolicy: Allow init to chown sysfs LED files
+5bd93d1e sepolicy: Treat proc-based DT fstab the same and sys-based
+
+   * system/vold/
+4d7db34 Also create vendor_ce (same reason as vendor_de)
+4c2c4c2 Support Samsung's implementation of exfat, called sdfat
+7f05a09 Create vendor_de. This is done by /init.rc on system-as-root device
+90e72c7 Don't set reserved_disk group, it panics old inits
+aa9b9c5 Allow deletion of symlink
+
+   * vendor/aosp/
+4fc09452 Set a default ringtone for the 2nd sim
+e8c81c17 extract_utils: introduce support for executing blob fixups
+e1b1f97d extract_utils: template: introduce kang mode
+1c79df2a extract_utils: template: make --section argument non-positional
+fab6f68b extract_utils: template: use quotation marks and variable curly braces consistently
+78d6ca0f extract_utils: make --section match words anywhere in the line
+9916810c extract_utils: introduce -k (kang mode) option
+3b087e2b extract_utils: cleanup variable names and arguments passed to extract() function
+7a4fef99 extract_utils: be compatible with system-as-root layouts
+65fcf11e extract_utils: drop the "/system/" prefix from prints of blob names
+5ff0b4d8 libbfqio: Remove vendor variant
+a61fe36a soong_config: Add BOOTLOADER_MESSAGE_OFFSET
+9a8000e1 Add APN for XFINITY Mobile
+a7c707ce apns: Add new Virgin Mobile apn
+be91f434 apn: Update the Ultra Mobile apn
+
+   * vendor/gapps/
+6bfbc08 Update gapps
+
+   * vendor/pixelstyle/
+cc6b8c7 Update WeatherClient
+e7d0acf Update AmbientPlayProvider
+20bc35c Update MatchmakerPrebuilt
+
+   * vendor/qcom/opensource/cryptfs_hw/
+1ae3fef Merge https://github.com/LineageOS/android_vendor_qcom_opensource_cryptfs_hw into pie
+
+=======================
+     03-07-2019
+=======================
+
+
+   * vendor/interfaces/
+c746a9e Add radio indication/response
+293c096 [huawei radio 1.0] First draft
+
+=======================
+     03-06-2019
+=======================
+
+
+   * hardware/nxp/nfc/
+c8accaa Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/hardware/nxp/nfc into pie
+
+   * hardware/qcom/display-caf/sdm845/
+3749ad5ed display-hals: Expose c2d2.h even if TARGET_DISABLE_DISPLAY is set
+
+   * vendor/aosp/
+7fdde559 generate_json_build_info: Update spacing
+
+=======================
+     03-05-2019
+=======================
+
+
+   * bionic/
+345ab83c5 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/bionic into pie
+
+   * build/make/
+a94ec7c35 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/build into pie
+
+   * device/phh/treble/
+69f230d Fix low brightness issue on realme 2 pro
+c97cc4c shfmt -i4 -w
+a8b1cfb Add pettyl and james in the list of borked moto devices
+5574bc3 shellcheck
+c03cb0f Also check pie path for android.hardware.boot hal
+
+   * device/qcom/sepolicy/
+cc99b04 sepolicy: Label persist.nfc.hci_network_reset_req
+
+   * frameworks/av/
+8de485aab Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/av into pie
+
+   * frameworks/base/
+7ee370e3520 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/base into pie
+
+   * frameworks/native/
+6997d4a32 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/native into pie
+
+   * manifest/
+0e5c117 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/manifest into pie
+00963bf Manifest for Android 9.0.0 Release 34 (PQ2A.190305.002)
+
+   * system/core/
+eb7287020 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/system/core into pie
+
+   * vendor/hardware_overlay/
+d33ab2c Fix build
+48afce7 Remove status_bar_height in pie for moto one
+0ae95df Forbid status_bar_height in pie
+34f2644 Update power_profile.xml for Xiaomi Mi A2
+2fc673a Dehardcode status_bar_height for Pie
+e8a6a36 Update Treble app to 1808b79a206251c2947e988501d63deb011cfc08
+5cc7a32 Update Treble app to 7eae005766ae4cd0e04209582d573ac94fd31eb1
+f642b91 Delete hw-fpnav. This is now handled by Treble app
+fbd021c Update Treble app to a91d94595e05270475b3188a3adce4656f2517aa
+a528c6f Updatre Treble app to 70740a754ed89e11e126618ff8f1df28fc3330b5
+9e85cfe Update TrebleApp to 658099e446c70a312a1cb7536038d2d903f2e5c0
+8fcad79 Update TrebleApp apk as of 3d403df589310b5a74d88d7fec856948b43a115c
+92ce08f Remove in-tree messy apps, and switch to TrebleApp
+1272b20 Update known keys
+62b7da4 Get rid of config_doublePressOnPowerBehavior
+cf21c21 Update overlay for Mi MIX 3
+c0d2686 Add initial HTC U12+ overlay
+d34e5f4 Deleted redundant setting. (#86)
+1643f1d Enable the navigation bar for Mi A2
+d82c1db Add lenovo s5 overlay
+f1492d1 Add brightness curve for AlwaysOnDisplay
+77160af Remove double tap power gesture
+e426db3 Add Motorola One (deen) notch overlay
+6d84e4a Double tap to camera isnt an hardware feature
+143f76b Merge pull request #80 from TadiT7/yeah
+
+=======================
+     03-04-2019
+=======================
+
+
+   * vendor/nxp/opensource/halimpl/
+fb5cc96 halimpl: Remove useless makefile
+
+=======================
+     03-03-2019
+=======================
+
+
+   * device/phh/treble/
+1cf5400 Also check pie manifest
+4cec494 Fix audio hal crash on moto
+
+=======================
+     03-02-2019
+=======================
+
+   * art/
+a590a49a84 Add an option to disable sse4.2 features
+
+   * device/qcom/sepolicy/
+1b9a7b9 sepolicy: Replace unrecognized character
+
+   * external/proguard/
+118ffd4 Allow passing extra java arguments to proguard
+
+   * hardware/qcom/display-caf/sdm845/
+45c21a231 Add 'display-commonsys-intf/' from https://source.codeaurora.org/quic/la/platform/vendor/qcom-opensource/display-commonsys-intf/tag/?h=LA.UM.7.3.r1-06900-sdm845.0
+
+=======================
+     03-01-2019
+=======================
+
+
+   * hardware/qcom/audio-caf/sdm845/
+6a6bc5400 audio: Use direct    * pathmap
+
+   * hardware/qcom/display/
+250c51746 hwc: msm8084: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/apq8084/
+5d0f880d7 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8916/
+197a40e18 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8952/
+f388742 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8974/
+0cc9709b8 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8994/
+4523303d9 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8996/
+44a0b38f9 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/msm8998/
+7489d6c3 hwc: Remove _vendor from libbfqio
+
+   * hardware/qcom/display-caf/sdm845/
+5f3bd2c74 Add C2D_FORMAT_BT601_FULLRANGE to C2D_FORMAT_MODE
+72302b622 Add C2D_COLOR_FORMAT_420_TP10 to C2D_YUV_FORMAT
+7bb583ee7 display: Define soong namespace
+50416f99f Don't build lights module if vendor supplies it
+9b8698610 display: Use    * pathmap
+
+   * hardware/qcom/media-caf/sdm845/
+f615591f6 mm-core: "srik" you!
+d057d4081 media: libOmxSw encoders require prop headers :(
+f92f76bc1 media: Use    * pathmap
+
+=======================
+     02-28-2019
+=======================
+
+
+   * frameworks/base/
+fce809b00c3 WeatherClient: Update timeout to 10 minutes
+44b812113f0 Update navbar home icon
+3b4fd14a822 BatteryMeterView: Improve percentage inside icon
+cf374f92d35 Revert "Fix action bar font family on material themes"
+
+   * vendor/pixelstyle/
+4185d54 Update WeatherClient
+
+=======================
+     02-27-2019
+=======================
+
+
+   * build/make/
+3359fd880 Introduce non-preopt boot jars
+6c3c9b0ec core: remove duplicated boot jars
+e1ee091f0 build: Change device prop name
+
+   * device/phh/treble/
+908dd91 Fix incoming SMS and mobile data on MT6379
+
+   * device/qcom/sepolicy/
+6c1c6e3 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * device/qcom/sepolicy-legacy/
+d4aaecb sepolicy: Resolve cameraserver denials
+2f7a25d legacy: Resolve hal_camera_default denials
+075c18c sepolicy: Label vendor.post_boot.parsed
+518da5d sepolicy: Resolve hal_nfc denials
+3e7b817 legacy: Resolve rome BT denials
+336815d sepolicy: Correctly label display.qservice per SoC
+be5ff44 Merge pull request #1 from YumeMichi/pie
+
+   * hardware/qcom/bt-caf/
+e5da643 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * hardware/qcom/media-caf/msm8998/
+125f38c75 Fix invalid logical constant creation.
+
+   * hardware/qcom/wlan-caf/
+0a614e2 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * packages/apps/Nfc/
+1be41703 Automatic translation import
+
+   * vendor/interfaces/
+f99087f Include primitive mediatek radio hal reverse
+
+   * vendor/qcom/opensource/cryptfs_hw/
+3318816 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * vendor/qcom/opensource/data-ipa-cfg-mgr/
+4f0ea34 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * vendor/qcom/opensource/dataservices/
+c2c0364 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * vendor/qcom/opensource/interfaces/
+bd2b995 interfaces: Regen blueprints
+aa6b069 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+   * vendor/qcom/opensource/thermal-engine/
+3e8495d Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
+
+=======================
+     02-26-2019
+=======================
+
+
+   * device/qcom/sepolicy-legacy/
+2ac4cf0 Display: Remove vendor property context for lcd density
+
+=======================
+     02-25-2019
+=======================
+
+
+   * device/qcom/sepolicy-legacy/
+94a4f67 Revert "legacy: allow init to read /proc/device-tree"
+
+   * external/exfat/
+5e45863 Android: remove "tags" from Android.bp.
+
+   * hardware/qcom/media-caf/msm8996/
+406a31fc9 Fix invalid logical constant creation.
+
+   * manifest/
+f3b7aa8 Stop tracking msm8998 audio hal
+
+=======================
+     02-24-2019
+=======================
+
+
+=======================
+     02-23-2019
+=======================
+
+
