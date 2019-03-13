@@ -15,8 +15,9 @@ Version Information
 Status: Stable
 ```
 ## Supports
-QQ Support Group：946676346
+
 ![QQ_Group](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/qqgroup.png "QQ_Group")
+QQ Support Group：946676346
 
 ## Donations：
 ```bash
