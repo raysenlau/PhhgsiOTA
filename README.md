@@ -1,4 +1,4 @@
-# [捐助] Donate me
+# [捐赠] Donate me
 
 ![Ray_lau](https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/donation/donation.png "Ray_lau")
 
@@ -15,5 +15,10 @@ Version Information
 Status: Stable
 ```
 ## Supports
-QQ Support Group：949331477
+QQ Support Group：946676346
+
+## Donations：
+
+A*w
+
 
