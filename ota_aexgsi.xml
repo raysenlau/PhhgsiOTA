@@ -10,7 +10,7 @@
       <ChangelogUrl
         id="changelogs"
         title="Changelogs"
-        description="Check Out The Latest Changes">https://raw.githubusercontent.com/raysenlau/PixelgsiOTA/pe/changelog/phhgsi_arm64_ab.txt</ChangelogUrl>
+        description="Check Out The Latest Changes">https://raw.githubusercontent.com/raysenlau/PhhgsiOTA/pe/changelog/phhgsi_arm64_ab.txt</ChangelogUrl>
       <RomMirrorUrl
         id="romirror"
         title="XDA Thread"
@@ -18,7 +18,7 @@
       <PaypalUrl
         id="donation"
         title="Donation"
-        description="Donate To The Developer">https://github.com/raysenlau/PixelgsiOTA/blob/pe/README.md</PaypalUrl>
+        description="Donate To The Developer">https://github.com/raysenlau/PhhgsiOTA/blob/pe/README.md</PaypalUrl>
     </phhgsi_arm64_ab>
   </Stable>
 </SlimOTA>
