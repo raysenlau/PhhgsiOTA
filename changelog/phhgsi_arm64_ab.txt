@@ -8,17 +8,17 @@ Updates:
 3. Optimized Higher_Aspect_Ratio_Screen.
 4. Added more Optimized Devices:
     B2N,C1N,DRG,MATA,Z5,Z5s
-5. Improving System Stability.
+5. Updated Phh's Patches v111.
 
 
 BuildID: 
 PQ2A.190305.002
 
 Filename:
-PixelExperience_arm64_ab-9.0-20190317-0925-By-WoNiu.img.zip
+PixelExperience_arm64_ab-9.0-20190320-1100-By-WoNiu.img.zip
 
 md5sum:
-e70f94be3f48bd0abe6ae5e372a833d0
+77ef4962b34b037d1516d886fd173570
 
 How-to Upgrade：
 $ adb reboot bootloader
@@ -27,58 +27,144 @@ $ fastboot reboot
 
 
 =======================
+     03-20-2019
+=======================
+
+
+   * bionic/
+f16fb8953 Read SDK version override from property
+
+   * build/make/
+b729e1b79 Set ro.build.fingerprint in system/etc/prop.default
+6a254d718 Revert "Remove root folder bt_firmware in GSI"
+
+   * device/phh/treble/
+ffa9ade add BT product model
+e69ec0d vendor: Add hide notch support by PE
+115ce20 v111: Fix BT in-call audio
+
+   * external/selinux/
+8f16b437 Kirin:: Workaround some conflicting Kirin tether SELinux context
+aa4024f1 Increase default log_level to get actual selinux error in kmsg
+9d5a2f10 Enable multipl_decls by default. This is needed because 8.0 init doesn't add -m
+
+   * frameworks/av/
+add2e8eb6 Revert "Set rlimit rtprio for cameraserver"
+b68fc21b8 CameraService: Support calling addStates in enumerateProviders
+dbc225039 We might not have a mFlashlight at this state, but that's ok
+ec9c484d2 Kirin:: Remove lock to prevent self-lock
+4baeab493 Fix WiFi-Display on Huawei devices (EMUI 8.0)
+ee394d494 FIH devices: Fix "Earpiece" audio output
+
+   * frameworks/base/
+c1f5e5015ea Fix HD volte icon paddingStart
+cf7a50ff1c8 Use HD VoLTE Icon
+e279c41765a Fix VOLTE icon color on Light statusbar
+2c1f9a190cc LockscreenCharging: squashed (1/3)
+a2f05c34948 Phone ringtone setting for Multi SIM device
+695c6737098 Add VOLTE icon (AEX)
+ac89030a8d5 Use Samsung fingerprint percent thingy on all Samsung devices
+48d0e910ca5 Re-order services so that it works even without qtaguid
+f76388e035e Add japanese S9
+4dcd78db52c Add a property toggle to enable high brightness range on samsung device
+14d7ac03d5d Switch samsung light fingerprint match to regexp, to include Note9
+c8acd90455c Don't wake IR HAL to the infinity and beyond
+a68a6c29d6a power: Disable keyboard/button lights while dozing/dreaming
+de16d042084 Reintroduce button-backlight (and respective inactivity timeout)
+8da07787486 Move SysuiDarkThemeOverlay to /system
+50f16d61e7a idmap: Don't silently ignore RROs with same priority
+04f6184f3d7 Change SignalStrentgh to change behaviour based on property
+e3f7a490c43 Show APN Settings for CDMA carriers
+502dcc5344a "remaining" of HAL onEnroll is actually a percent of progress
+a1cadc76bb4 Add Qualcomm starlte
+41cac76be77 Fix typo on fnmatch return value check
+65c6c5a9513 property-matching RROs: allow to prefix the value with + to do glob match instead of exact match
+f5373f6626d Try to make brightness more generic using property set by rw-system
+07d0de4dc20 Fix OP6 brightness
+120fc6aa3bb S9 brightness override only for screen
+e505682c6dd Fix(?) #62
+4caf1d88e94 Don't crash if there is IR HAL is not declared
+ee9853f6b3b Also scan /system/overlay
+ecb3860822c Relax requirement for visible flag to sdcards
+142afa1a0c0 Fix backlight control on Galaxy S9(+)
+
+   * frameworks/native/
+cfea90f21 Huawei:: HWC doesn't understand 0,0,0,0 == fullscreen damage. Set it to the whole visible surface
+2cd2c7e78 Enable fallback to old ro.sf.hwrotation property
+371b2ecac Ignore usage bits verification
+5d2841913 AOSP 8.0/8.1 didn't use presentOrValidate, so it's broken. Don't use it
+
+   * frameworks/opt/net/wifi/
+697f9f3b9 Support hostap on O/O-MR1 vendors
+779700c35 Start supplicant later
+bcc496cc9 Revert "SupplicantManager: Remove |ensure_config_file_exists|"
+
+   * frameworks/opt/telephony/
+90ed9d90a Add a property to force all APNs to be modemCognitive. Needed on some MTK modems
+ab084f61f Choose a more generic prop.
+8b69c3b69 Make MAX_CONNECTIONS_GSM settable from property
+c2150fd7d Telephony: Don not call onUssdRelease for Huawei RIL
+719dc98fd Allow LocaleTracker to work even if wifi is not up (FDE)
+b972cc760 Add route to gateway on null netmask
+
+   * packages/apps/Settings/
+367a03c407 Settings: Add PhhgsiOTA App
+3d53d3aae3 Settings: Add aboutus to device info
+bc5de8507d Phone ringtone setting for Multi SIM device
+b3423e6722 Act as usb device when there is no hal, but we believe we are a device
+
+   * packages/services/Telecomm/
+193047a1 Phone ringtone setting for Multi SIM device
+
+   * packages/services/Telephony/
+5190ed53b aa
+
+   * system/bt/
+c7d5eda23 Add props to control supported features and states (#1)
+4883c960e Make BTM_BYPASS_EXTRA_ACL_SETUP dynamic
+
+   * system/core/
+6770898d3 Ignore /proc/kmsg if reading from it faults
+bc214855b First drop_privs (which may fail) and only run thread that might be scheduled before us
+ddca6c4b2 Some kernel crashes when using too recent sdcardfs options. Force everyone to old options
+94eec01c2 Revert "logd: add "+passcred" for logdw socket"
+
+   * system/netd/
+4528a06 Huawei Kirin 960:: accept broken rpfilter match
+
+   * system/sepolicy/
+a7010b40 Don't set esdfs or exfat genfscon. Assume OEM does
+
+   * system/vold/
+0be785a Also create vendor_ce (same reason as vendor_de)
+4fe35d4 Support Samsung's implementation of exfat, called sdfat
+8826096 Create vendor_de. This is done by /init.rc on system-as-root device
+e4ecd7e Don't set reserved_disk group, it panics old inits
+9e50445 Allow deletion of symlink
+
+   * vendor/aosp/
+39a403ad Use Cloudflare DNS servers as hints
+92678ea0 Set a default ringtone for the 2nd sim
+
+=======================
+     03-19-2019
+=======================
+
+
+=======================
+     03-18-2019
+=======================
+
+
+   * frameworks/base/
+c552ffbbc50 Smart clock: Fix clock showing then device is on landscape and QS expanded
+
+=======================
      03-17-2019
 =======================
 
 
-   * build/make/
-f2ae485a4 Set ro.build.fingerprint in system/etc/prop.default
-ddc675e13 Revert "Remove root folder bt_firmware in GSI"
-
-   * device/phh/treble/
-a03fb20 add BT product model
-178d99b vendor: Add hide notch support by PE
-34558d9 v111: Fix BT in-call audio
-
-   * external/selinux/
-5011539f Increase default log_level to get actual selinux error in kmsg
-5a180fcd Enable multipl_decls by default. This is needed because 8.0 init doesn't add -m
-
-   * frameworks/av/
-da4f59191 We might not have a mFlashlight at this state, but that's ok
-b7e48f7ce Kirin:: Remove lock to prevent self-lock
-13c0a6b30 Fix WiFi-Display on Huawei devices (EMUI 8.0)
-13d53ca4f FIH devices: Fix "Earpiece" audio output
-
    * frameworks/base/
-5163c2d7c65 Fix HD volte icon paddingStart
-006cdeabeca Use HD VoLTE Icon
-ddf9f4b1c91 Fix VOLTE icon color on Light statusbar
-1eee72eb555 LockscreenCharging: squashed (1/3)
-1cc84adf7ee Phone ringtone setting for Multi SIM device
-f4de2a5babb Add VOLTE icon (AEX)
-c08bfdee66b Add japanese S9
-0c97969f97c Add a property toggle to enable high brightness range on samsung device
-d545b185fc2 Switch samsung light fingerprint match to regexp, to include Note9
-4f929822033 Don't wake IR HAL to the infinity and beyond
-5a73f1a20a9 power: Disable keyboard/button lights while dozing/dreaming
-7d81b0772d2 Reintroduce button-backlight (and respective inactivity timeout)
-2a34719c601 Move SysuiDarkThemeOverlay to /system
-cf4453c2a45 idmap: Don't silently ignore RROs with same priority
-b4666f9751c Change SignalStrentgh to change behaviour based on property
-d89e5e7b514 Show APN Settings for CDMA carriers
-b977c4c20ab "remaining" of HAL onEnroll is actually a percent of progress
-79c2ee4a12b Add Qualcomm starlte
-8982b4e8084 Fix typo on fnmatch return value check
-f53694a796d property-matching RROs: allow to prefix the value with + to do glob match instead of exact match
-e6dfe035b69 Try to make brightness more generic using property set by rw-system
-89770a96cbf Fix OP6 brightness
-49846207335 S9 brightness override only for screen
-fe7bbba5931 Fix(?) #62
-40a15b55c50 Don't crash if there is IR HAL is not declared
-5d547ae2836 Also scan /system/overlay
-c0f4acf03bf Relax requirement for visible flag to sdcards
-639a0500029 Fix backlight control on Galaxy S9(+)
 195284fccb6 Automatic translation import
 866324af8bb Improve ambient play layout on keyguard
 46e5a1a37d9 Smart clock improvements
@@ -86,26 +172,10 @@ c0f4acf03bf Relax requirement for visible flag to sdcards
 76ccc54ead5 fwb: Add hide notch support [1/3]
 33cf79b4152 base: Introduce smart clock
 
-   * frameworks/native/
-66964f1f4 Enable fallback to old ro.sf.hwrotation property
-4e59c2629 Huawei:: HWC doesn't understand 0,0,0,0 == fullscreen damage. Set it to the whole visible surface
-f13725ac1 Ignore usage bits verification
-612865d2f AOSP 8.0/8.1 didn't use presentOrValidate, so it's broken. Don't use it
-
-   * frameworks/opt/net/wifi/
-4d87cf735 Support hostap on O/O-MR1 vendors
-6da81f521 Start supplicant later
-593d89da6 Revert "SupplicantManager: Remove |ensure_config_file_exists|"
-
-   * frameworks/opt/telephony/
-29e60fda2 Allow LocaleTracker to work even if wifi is not up (FDE)
-5c0b55a67 Add route to gateway on null netmask
+   * hardware/qcom/display-caf/sdm845/
+502c40b9a display-hals: Allow building libdisplayconfig
 
    * packages/apps/Settings/
-240d743bfb Settings: Add PhhgsiOTA App
-6b1e558ea4 Settings: Add aboutus to device info
-349eba9517 Phone ringtone setting for Multi SIM device
-5c9a74e2be Act as usb device when there is no hal, but we believe we are a device
 0b1bc0c886 Automatic translation import
 6c2301b70a Settings: Add hide notch support [3/3]
 
@@ -123,33 +193,7 @@ e5c1c529 Update strings file name
    * packages/providers/DownloadProvider/
 8194bfb Automatic translation import
 
-   * packages/services/Telecomm/
-651acc92 Phone ringtone setting for Multi SIM device
-
-   * system/bt/
-350054a76 Make BTM_BYPASS_EXTRA_ACL_SETUP dynamic
-
-   * system/core/
-0cd66758b First drop_privs (which may fail) and only run thread that might be scheduled before us
-48f1417fc Some kernel crashes when using too recent sdcardfs options. Force everyone to old options
-9b14de39e Revert "logd: add "+passcred" for logdw socket"
-
-   * system/netd/
-3a05c10 Huawei Kirin 960:: accept broken rpfilter match
-
-   * system/sepolicy/
-e56d9fe5 Relax /proc read from ueventd, huawei needs it
-fcdaac52 Don't set esdfs or exfat genfscon. Assume OEM does
-
-   * system/vold/
-5122448 Also create vendor_ce (same reason as vendor_de)
-ad43c89 Support Samsung's implementation of exfat, called sdfat
-3b337f7 Create vendor_de. This is done by /init.rc on system-as-root device
-242919d Don't set reserved_disk group, it panics old inits
-ffb8f34 Allow deletion of symlink
-
    * vendor/aosp/
-4951a2c1 Set a default ringtone for the 2nd sim
 8b1faf0c vendor: Add hide notch support [2/3]
 
    * vendor/pixelstyle/
@@ -290,228 +334,4 @@ c8fb3cf9 vendor: Update ota props
 
    * manifest/
 a3e7cba Track ril-caf from los
-
-=======================
-     03-09-2019
-=======================
-
-
-   * frameworks/opt/telephony/
-f544501c4 telephony: Change sim card name when isn't provisioned
-
-   * hardware/qcom/fm/
-e5187bc Revert "FM: adaptive icon"
-
-   * hardware/ril/
-37a22a4 Fix condition added on 71ac8720ef9a06f1fc591946875d11f44c5cc137
-
-   * packages/apps/Settings/
-2436762d4e Automatic translation import
-
-   * packages/providers/AmbientPlayHistoryProvider/
-ed1fb29 Automatic translation import
-
-   * packages/providers/DownloadProvider/
-38f980d Automatic translation import
-
-   * packages/services/Telecomm/
-e6a4b8b6 Change UI to be consistency with dialer settings light M2 theme
-
-   * packages/services/Telephony/
-5a38c6e85 Fix an issue wrong network operator name is displayed on MSIM devices
-2b49f6dc0 Revert "Use proper summary for network select list preference on dsds/dsda/tsts"
-22905d2b7 Change UI styles to match dialer settings light M2 theme
-ff13850b1 Disable EmergencyDialer multi window mode
-15b7864b6 Fix EmergencyDialer UI when display size change
-
-=======================
-     03-08-2019
-=======================
-
-
-   * build/make/
-942838864 Use flags from Soong for d8, r8, dx and desugar
-749c88678 Remove TARGET_USES_MKE2FS
-0ec457c61 Remove extra $ in soong_app_prebuilt
-
-   * build/soong/
-71126e53 Fix formatting
-a7f7fbf8 Optimize CPU time when running d8, r8, dx and desugar
-
-   * device/phh/treble/
-5d34610 Call service only if we got it
-
-   * device/qcom/sepolicy/
-85c5d8d5 Merge https://github.com/LineageOS/android_device_qcom_sepolicy into HEAD
-
-   * device/qcom/sepolicy-legacy/
-283e344 Merge https://github.com/LineageOS/android_device_qcom_sepolicy-legacy into HEAD
-
-   * frameworks/av/
-0234ccebc stagefright: add changes related to high-framerates in CameraSource
-806a14782 Revert "Stagefright: Allow setting high-framerates in CameraSource"
-dca428945 Revert "Stagefright: Do not skip frames in time-lapse-source for high-speed"
-
-   * frameworks/base/
-e51e1a03dc8 Code improvements for "SystemUI: Refresh themes on dirty flash"
-12d494f0e07 AmbientIndicationManager: Fix NPE
-
-   * frameworks/native/
-b831557ad input: Adjust priority
-
-   * manifest/
-1ee00c8 Fork external/proguard
-cb6b606 manifest: Re-enable SDM845 CAF HALs
-4d45174 manifest: Move vendor/pixelstyle to GitLab
-
-   * packages/apps/Settings/
-44b7b6ee33 Update the timestamp used for time zone filtering
-2d25bd34f2 Settings: fix eject sdcard icon color
-
-   * prebuilts/clang/host/linux-x86/
-2fc48fa6 Update prebuilt Clang to r353983.
-
-   * system/bt/
-ac0161c61 Merge tag 'android-9.0.0_r34' into lineage-16.0-android-9.0.0_r34
-
-   * system/sepolicy/
-e449377c sepolicy: Allow init to chown sysfs LED files
-5bd93d1e sepolicy: Treat proc-based DT fstab the same and sys-based
-
-   * system/tools/hidl/
-284d76a Merge tag 'android-9.0.0_r34' into lineage-16.0-android-9.0.0_r34
-
-   * vendor/aosp/
-e8c81c17 extract_utils: introduce support for executing blob fixups
-e1b1f97d extract_utils: template: introduce kang mode
-1c79df2a extract_utils: template: make --section argument non-positional
-fab6f68b extract_utils: template: use quotation marks and variable curly braces consistently
-78d6ca0f extract_utils: make --section match words anywhere in the line
-9916810c extract_utils: introduce -k (kang mode) option
-3b087e2b extract_utils: cleanup variable names and arguments passed to extract() function
-7a4fef99 extract_utils: be compatible with system-as-root layouts
-65fcf11e extract_utils: drop the "/system/" prefix from prints of blob names
-5ff0b4d8 libbfqio: Remove vendor variant
-a61fe36a soong_config: Add BOOTLOADER_MESSAGE_OFFSET
-9a8000e1 Add APN for XFINITY Mobile
-a7c707ce apns: Add new Virgin Mobile apn
-be91f434 apn: Update the Ultra Mobile apn
-
-   * vendor/gapps/
-6bfbc08 Update gapps
-
-   * vendor/nxp/opensource/commonsys/packages/apps/Nfc/
-fcd61207 Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
-
-   * vendor/nxp/opensource/halimpl/
-460e28d Merge tag 'LA.UM.7.3.r1-06900-sdm845.0' into HEAD
-
-   * vendor/pixelstyle/
-cc6b8c7 Update WeatherClient
-e7d0acf Update AmbientPlayProvider
-20bc35c Update MatchmakerPrebuilt
-
-   * vendor/qcom/opensource/cryptfs_hw/
-1ae3fef Merge https://github.com/LineageOS/android_vendor_qcom_opensource_cryptfs_hw into pie
-
-=======================
-     03-07-2019
-=======================
-
-
-   * packages/apps/CarrierConfig/
-d41f4d0 Add settings for carrier ION Mobile
-
-   * vendor/interfaces/
-c746a9e Add radio indication/response
-293c096 [huawei radio 1.0] First draft
-
-=======================
-     03-06-2019
-=======================
-
-
-   * hardware/nxp/nfc/
-c8accaa Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/hardware/nxp/nfc into pie
-
-   * hardware/qcom/display-caf/sdm845/
-3749ad5ed display-hals: Expose c2d2.h even if TARGET_DISABLE_DISPLAY is set
-
-   * vendor/aosp/
-7fdde559 generate_json_build_info: Update spacing
-
-=======================
-     03-05-2019
-=======================
-
-
-   * bionic/
-345ab83c5 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/bionic into pie
-
-   * build/make/
-a94ec7c35 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/build into pie
-
-   * device/phh/treble/
-69f230d Fix low brightness issue on realme 2 pro
-c97cc4c shfmt -i4 -w
-a8b1cfb Add pettyl and james in the list of borked moto devices
-5574bc3 shellcheck
-c03cb0f Also check pie path for android.hardware.boot hal
-
-   * device/qcom/sepolicy/
-cc99b04d sepolicy: Label persist.nfc.hci_network_reset_req
-
-   * frameworks/av/
-8de485aab Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/av into pie
-
-   * frameworks/base/
-7ee370e3520 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/base into pie
-
-   * frameworks/native/
-6997d4a32 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/frameworks/native into pie
-
-   * manifest/
-0e5c117 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/manifest into pie
-00963bf Manifest for Android 9.0.0 Release 34 (PQ2A.190305.002)
-
-   * packages/apps/Updates/
-f4a3c575 Updater: Assume older Android version to be incompatible
-
-   * system/core/
-eb7287020 Merge tag 'android-9.0.0_r34' of https://android.googlesource.com/platform/system/core into pie
-
-   * vendor/hardware_overlay/
-d33ab2c Fix build
-48afce7 Remove status_bar_height in pie for moto one
-0ae95df Forbid status_bar_height in pie
-34f2644 Update power_profile.xml for Xiaomi Mi A2
-2fc673a Dehardcode status_bar_height for Pie
-e8a6a36 Update Treble app to 1808b79a206251c2947e988501d63deb011cfc08
-5cc7a32 Update Treble app to 7eae005766ae4cd0e04209582d573ac94fd31eb1
-f642b91 Delete hw-fpnav. This is now handled by Treble app
-fbd021c Update Treble app to a91d94595e05270475b3188a3adce4656f2517aa
-a528c6f Updatre Treble app to 70740a754ed89e11e126618ff8f1df28fc3330b5
-9e85cfe Update TrebleApp to 658099e446c70a312a1cb7536038d2d903f2e5c0
-8fcad79 Update TrebleApp apk as of 3d403df589310b5a74d88d7fec856948b43a115c
-92ce08f Remove in-tree messy apps, and switch to TrebleApp
-1272b20 Update known keys
-62b7da4 Get rid of config_doublePressOnPowerBehavior
-cf21c21 Update overlay for Mi MIX 3
-c0d2686 Add initial HTC U12+ overlay
-d34e5f4 Deleted redundant setting. (#86)
-1643f1d Enable the navigation bar for Mi A2
-d82c1db Add lenovo s5 overlay
-f1492d1 Add brightness curve for AlwaysOnDisplay
-77160af Remove double tap power gesture
-e426db3 Add Motorola One (deen) notch overlay
-6d84e4a Double tap to camera isnt an hardware feature
-143f76b Merge pull request #80 from TadiT7/yeah
-
-=======================
-     03-04-2019
-=======================
-
-
-   * vendor/nxp/opensource/halimpl/
-fb5cc96 halimpl: Remove useless makefile
 
