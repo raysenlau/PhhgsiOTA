@@ -2,11 +2,11 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
   <Stable>
     <phhgsi_arm64_ab>
-      <Filename>20190410-1535-r35-v112-April-Security-Patches</Filename>
+      <Filename>20190510-0609-r37-v113-May-Security-Patch</Filename>
       <RomUrl
         id="rom"
         title="Rom"
-        description="Download The Latest Build">https://mega.nz/#!wgZRBCBY!6qM65IzDXo4_aUzS-hWzpoVCoBAYDlAAu2exrX0CyxE</RomUrl>
+        description="Download The Latest Build">https://mega.nz/#!ZgRR3IAZ!zqJTecJNmniSRVcuaFj5XDn8wHHF55SXfAokjd7Qwfs</RomUrl>
       <ChangelogUrl
         id="changelogs"
         title="Changelogs"
