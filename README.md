@@ -24,5 +24,6 @@ QQ Support Group：946676346
 ```bash
 A*w
 k*x
+*岑
 
 ```
