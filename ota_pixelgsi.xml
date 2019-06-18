@@ -2,11 +2,11 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
   <Stable>
     <phhgsi_arm64_ab>
-      <Filename>20190522-0747-r37-v113-系统优化</Filename>
+      <Filename>20190618-0356-r42-v114-June</Filename>
       <RomUrl
         id="rom"
         title="Rom"
-        description="Download The Latest Build">https://mega.nz/#!9hxzBCjZ!QgoiTDZXOoAhHXDFWZ3GkBPrFPN2V7qlzLQt855ZLIw</RomUrl>
+        description="Download The Latest Build">https://mega.nz/#!9xBD1AJB!atWWvl_0nXFXQxYT1gHjg9rzX6Kpqivtd7lawX_sEuw</RomUrl>
       <ChangelogUrl
         id="changelogs"
         title="Changelogs"
