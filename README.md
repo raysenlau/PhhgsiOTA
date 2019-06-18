@@ -25,5 +25,6 @@ QQ Support Group：946676346
 A*w
 k*x
 *岑
+*子
 
 ```
