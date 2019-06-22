@@ -6,9 +6,17 @@
 
 #Installation#
 ====================================================
-1.Download the ROM and unzip it.
-2.Boot into Download Mode: adb reboot bootloader
-3.Flash the ROM with: fastboot flash system path/to/system.img
-4.Wipe Data and Reboot: fastboot -w reboot
+1.Download the ROM and UNZIP it.
+2.Boot into Download Mode: 
+$ adb reboot bootloader
+3.Flash the ROM with: 
+$ fastboot flash system path/to/system.img
+4.Wipe Data and Reboot: 
+$ fastboot -w reboot
 
 To Upgrade **DO NOT WIPE YOUR DATA**: fastboot reboot
+
+Tips:
+IF Your Stock ROM exist vbmeta.img, you have to flash vbmeta first from stock:
+$ fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+Then proceed with regular system image flashing steps.
