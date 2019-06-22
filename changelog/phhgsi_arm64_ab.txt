@@ -16,7 +16,16 @@ $ fastboot -w reboot
 
 To Upgrade **DO NOT WIPE YOUR DATA**: fastboot reboot
 
+
 Tips:
 IF Your Stock ROM exist vbmeta.img, you have to flash vbmeta first from stock:
 $ fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
 Then proceed with regular system image flashing steps.
+
+
+Why should I use GSI for A/B devices to some A-only devices? : 
+On Android 9, Google changed the requirements and all devices shipped with Android 9 must use "system-as-root".
+Before this change, only A/B devices were system-as-root and GSI name was separated by A-only and A/B. 
+For this historical reasons, you have to use GSI for A/B on the devices shipped with Android 9+.
+
+Check this: ro.build.system_root_image=true
