@@ -2,11 +2,11 @@
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
   <Stable>
     <phhgsi_arm64_ab>
-      <Filename>20190905-1235-r46-Pie-Plus</Filename>
+      <Filename>20190825-1010-r46-Aug-Upgrade-to-Pie-Plus</Filename>
       <RomUrl
         id="rom"
         title="Rom"
-        description="Download The Latest Build">https://mega.nz/#!Eh4x2IKQ!V4KmvwvACbO7J6GCRCjO8R1XixOI8lxt1d_KzOEQJto</RomUrl>
+        description="Download The Latest Build">https://mega.nz/#!s8QigazD!Fk14G8MIhBh2b9esBef7JFiQzCVOtZEMENkCH0Z5DqQ</RomUrl>
       <ChangelogUrl
         id="changelogs"
         title="Changelogs"
